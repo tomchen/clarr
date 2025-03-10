@@ -1,0 +1,12 @@
+node_modules
+temp
+dist
+.DS_Store
+*-lock.*
+*.lock
+*.log
+/index.cjs
+/index.d.ts
+/index.global.js
+/index.mjs
+/index.umd.js

@@ -1,0 +1,55 @@
+{
+  "name": "clarr",
+  "version": "1.0.0-beta.0",
+  "description": "Fastest className construction library",
+  "author": "Tom Chen <tomchen.org@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tomchen/clarr/",
+  "bugs": {
+    "url": "https://github.com/tomchen/clarr/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomchen/clarr.git"
+  },
+  "module": "index.mjs",
+  "main": "index.cjs",
+  "unpkg": "index.global.js",
+  "umd:main": "index.umd.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "types": "./index.d.ts"
+    }
+  },
+  "files": [
+    "./index.mjs",
+    "./index.cjs",
+    "./index.global.js",
+    "./index.umd.js",
+    "./index.d.ts",
+    "./package.json",
+    "./LICENSE",
+    "./README.md"
+  ],
+  "scripts": {
+    "build": "terser ./src/index.global.js -o ./index.global.js --mangle && terser ./src/index.umd.js -o ./index.umd.js --mangle && cp ./src/index.mjs ./index.mjs && cp ./src/index.cjs ./index.cjs && cp ./src/index.d.ts ./index.d.ts",
+    "test": "node test/test.mjs && node test/test.cjs",
+    "test:bun": "bun test/test.mjs && bun test/test.cjs"
+  },
+  "keywords": [
+    "class name",
+    "classnames"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "latest",
+    "terser": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
